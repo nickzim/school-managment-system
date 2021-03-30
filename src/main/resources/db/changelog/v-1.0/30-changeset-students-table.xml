@@ -1,0 +1,20 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.3.xsd">
+
+    <changeSet id="5" author="Nick Zimakov">
+        <createTable  tableName="students">
+            <column  name="id"  type="BIGSERIAL">
+                <constraints  nullable="false"  primaryKey="true"  unique="true"/>
+            </column>
+            <column name="name" type="VARCHAR(250)"/>
+            <column  name="grade_id"  type="BIGINT">
+                <constraints  nullable="true"  primaryKey="false"  foreignKeyName="grades_id"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
